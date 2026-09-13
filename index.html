@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nova Kai | Fantasy League Hub</title>
+<meta name="description" content="Live standings, matchups, transactions, and draft history for Nova Kai fantasy football." />
+<link rel="icon" href="assets/nova-kai-logo.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <img src="assets/nova-kai-logo.png" alt="Nova Kai logo" class="logo" />
+    <div class="header-text">
+      <h1>NOVA KAI</h1>
+      <p class="tagline">STRIKE FIRST &middot; STRIKE HARD &middot; NO MERCY</p>
+    </div>
+  </div>
+  <div class="league-meta" id="league-meta">
+    <span id="season-label">Season —</span>
+    <span class="dot">&bull;</span>
+    <span id="week-label">Week —</span>
+    <span class="dot">&bull;</span>
+    <span id="status-label">Loading live data&hellip;</span>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button class="tab-btn active" data-tab="overview">Overview</button>
+  <button class="tab-btn" data-tab="matchups">Matchups</button>
+  <button class="tab-btn" data-tab="standings">Standings</button>
+  <button class="tab-btn" data-tab="transactions">Transactions</button>
+  <button class="tab-btn" data-tab="draft">Draft</button>
+</nav>
+
+<main>
+
+  <section id="overview" class="tab-panel active">
+    <div class="stat-grid" id="stat-grid">
+      <div class="stat-card"><span class="stat-value" id="stat-week">—</span><span class="stat-label">Current Week</span></div>
+      <div class="stat-card"><span class="stat-value" id="stat-teams">—</span><span class="stat-label">Teams</span></div>
+      <div class="stat-card"><span class="stat-value" id="stat-transactions">—</span><span class="stat-label">Total Transactions</span></div>
+      <div class="stat-card"><span class="stat-value" id="stat-leader">—</span><span class="stat-label">Current League Leader</span></div>
+    </div>
+    <div class="section-block">
+      <h2>This Week's Matchups</h2>
+      <div id="overview-matchups" class="matchup-grid"></div>
+    </div>
+  </section>
+
+  <section id="matchups" class="tab-panel">
+    <div class="week-selector">
+      <label for="week-select">Week:</label>
+      <select id="week-select"></select>
+    </div>
+    <div id="matchups-full" class="matchup-grid"></div>
+  </section>
+
+  <section id="standings" class="tab-panel">
+    <h2>Standings</h2>
+    <table class="data-table" id="standings-table">
+      <thead>
+        <tr><th>#</th><th>Team</th><th>Manager</th><th>Record</th><th>PF</th><th>PA</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <section id="transactions" class="tab-panel">
+    <h2>Recent Transactions</h2>
+    <ul class="transaction-list" id="transaction-list"></ul>
+  </section>
+
+  <section id="draft" class="tab-panel">
+    <h2>Draft Board</h2>
+    <div id="draft-meta" class="draft-meta"></div>
+    <table class="data-table" id="draft-table">
+      <thead>
+        <tr><th>Pick</th><th>Round</th><th>Player</th><th>Position</th><th>Team Owner</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>NOVA KAI FANTASY FOOTBALL &bull; Data via Sleeper API &bull; <span class="no-mercy">NO MERCY.</span></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
